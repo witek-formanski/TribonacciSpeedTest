@@ -25,7 +25,7 @@ Write-Output "`tArchitecture: $((Get-ComputerInfo).OsArchitecture)"
 GetVersion "node --version" "Node.js"
 MeasureTime "node tribonacci.js" "Node.js"
 
-GetVersion "g++ --version" "g++"
+GetVersion "g++ --version | Select-Object -First 1" "g++"
 MeasureTime "g++ tribonacci.cpp" "C++ compile time"
 MeasureTime ".\a.exe" "C++ runtime"
 
